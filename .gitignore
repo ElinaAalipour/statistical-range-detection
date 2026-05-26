@@ -219,3 +219,10 @@ __marimo__/
 
 # raw market data
 data/raw/*.csv
+
+# notebook cache
+.ipynb_checkpoints/
+
+# python cache
+__pycache__/
+*.pyc
