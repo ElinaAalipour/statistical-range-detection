@@ -25,14 +25,44 @@ The project follows a feature-driven research approach:
 4. Combine multiple weak signals into a regime score
 
 ---
+## Features
 
-## Feature Set (v1)
+### ATR Compression ✅
 
-### 1. ATR Compression
-Measures volatility contraction relative to historical baseline.
+Measures volatility contraction relative to historical ATR baselines.
+
+Features:
 
 - atr_rel_16
 - atr_rel_48
+
+---
+
+### Standard Deviation Compression ✅
+
+Measures return dispersion relative to historical volatility baselines.
+
+Features:
+
+- std_rel_16
+- std_rel_48
+
+---
+
+### Candle Range Compression ✅
+
+Measures candle-size contraction relative to historical candle ranges.
+
+Features:
+
+- range_rel_16
+- range_rel_48
+
+---
+
+### Bollinger Band Width
+
+Planned
 
 ---
 
@@ -59,5 +89,18 @@ ATR features show clear separation between:
 ---
 
 ## Project Status
-Feature 1 (ATR Compression): Completed & Validated
-Next: Rolling Standard Deviation Feature
+
+Completed:
+
+- ATR Compression
+- Standard Deviation Compression
+- Candle Range Compression
+
+In Progress:
+
+- Bollinger Band Width
+
+Next:
+
+- Feature Correlation Analysis
+- Range Score Construction
