@@ -29,40 +29,75 @@ The project follows a feature-driven research approach:
 
 ### ATR Compression ✅
 
-Measures volatility contraction relative to historical ATR baselines.
+Measures current volatility relative to historical ATR baselines.
+
+**Purpose:** Detect volatility contraction and expansion regimes.
 
 Features:
 
-- atr_rel_16
-- atr_rel_48
+* atr_rel_16
+* atr_rel_48
 
 ---
 
 ### Standard Deviation Compression ✅
 
-Measures return dispersion relative to historical volatility baselines.
+Measures price dispersion relative to historical standard deviation baselines.
+
+**Purpose:** Quantify changes in market variability.
 
 Features:
 
-- std_rel_16
-- std_rel_48
+* std_rel_16
+* std_rel_48
 
 ---
 
 ### Candle Range Compression ✅
 
-Measures candle-size contraction relative to historical candle ranges.
+Measures individual candle-size contraction relative to historical candle ranges.
+
+**Purpose:** Capture local price compression and expansion behavior.
 
 Features:
 
-- range_rel_16
-- range_rel_48
+* range_rel_16
+* range_rel_48
 
 ---
 
-### Bollinger Band Width
+### Bollinger Band Width Compression ✅
 
-Planned
+Measures price containment using normalized Bollinger Band Width.
+
+**Purpose:** Detect periods where price becomes statistically compressed around its moving average.
+
+Features:
+
+* bb_rel_16
+* bb_rel_48
+
+---
+
+## Feature Engineering Status
+
+Completed Features:
+
+* ATR Compression
+* Standard Deviation Compression
+* Candle Range Compression
+* Bollinger Band Width Compression
+
+Total Engineered Features:
+
+* 8 Relative Compression Features
+
+Current Stage:
+
+* Feature Validation Completed ✅
+* Correlation Analysis (Next)
+* Range Score Construction (Upcoming)
+
 
 ---
 
@@ -90,17 +125,29 @@ ATR features show clear separation between:
 
 ## Project Status
 
-Completed:
+### Completed
 
-- ATR Compression
-- Standard Deviation Compression
-- Candle Range Compression
+* Dataset acquisition and preprocessing
+* Exploratory data analysis
+* ATR Compression feature engineering
+* Standard Deviation Compression feature engineering
+* Candle Range Compression feature engineering
+* Bollinger Band Width feature engineering
+* Statistical validation
+* Visual validation
 
-In Progress:
+### Current Phase
 
-- Bollinger Band Width
+Feature Analysis & Selection
 
-Next:
+### Upcoming Work
 
-- Feature Correlation Analysis
-- Range Score Construction
+* Correlation analysis
+* Feature redundancy evaluation
+* Range Score design
+* Market regime classification
+
+### Research Question
+
+How can ranging market conditions be statistically defined and quantified?
+
