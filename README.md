@@ -190,4 +190,5 @@ How can ranging market conditions be statistically defined and quantified?
 4. Feature Selection
 5. Regime Score Construction
 6. Market State Quantification
+
 This ensures that the final Range Score is built on statistically justified and non-redundant components.
