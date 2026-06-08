@@ -17,12 +17,12 @@ EURUSD (H1 Timeframe)
 
 ## Methodology
 
-The project follows a feature-driven research approach:
-
-1. Define volatility-based hypotheses
-2. Construct statistical features
-3. Validate features visually and statistically
-4. Combine multiple weak signals into a regime score
+Define volatility-based hypotheses  
+Construct statistical features  
+Validate features visually and statistically  
+Perform correlation analysis and feature redundancy evaluation  
+Select representative features based on stability and diversity  
+Combine selected signals into a regime score
 
 ---
 ## Features
@@ -77,6 +77,31 @@ Features:
 * bb_rel_16
 * bb_rel_48
 
+### Feature Analysis & Selection ✅
+After engineering 8 relative compression features, a full correlation and structural analysis was performed to evaluate feature redundancy and information overlap.
+
+**Analysis Performed:**
+* Pearson Correlation Matrix
+* Spearman Correlation Matrix
+* Cross-horizon correlation comparison (16 vs 48)
+* Hierarchical feature clustering
+* Feature correlation network visualization
+
+### Key Findings:
+* Indicators derived from similar statistical foundations (e.g., STD and Bollinger Width) showed strong correlation.
+* Some short and mid-term horizons provided overlapping information.
+* Volatility features naturally grouped into structural clusters.
+
+### Selected Feature Set (v1 – Reduced Set):
+* atr_rel_16
+* std_rel_48
+* range_rel_48
+
+### These features were selected to balance:
+* Signal stability (longer horizons)
+* Information diversity (lower cross-correlation)
+* Multi-scale market structure representation
+
 ---
 
 ## Feature Engineering Status
@@ -94,9 +119,10 @@ Total Engineered Features:
 
 Current Stage:
 
-* Feature Validation Completed ✅
-* Correlation Analysis (Next)
-* Range Score Construction (Upcoming)
+* Feature Validation ✅
+* Correlation & Redundancy Analysis ✅
+* Initial Feature Selection ✅
+* Range Score Design (In Progress)
 
 
 ---
@@ -135,10 +161,13 @@ ATR features show clear separation between:
 * Bollinger Band Width feature engineering
 * Statistical validation
 * Visual validation
+* Full feature correlation analysis
+* Feature clustering & redundancy evaluation
+* Initial reduced feature set selection
 
 ### Current Phase
 
-Feature Analysis & Selection
+Range Score Design & Regime Quantification
 
 ### Upcoming Work
 
@@ -151,3 +180,14 @@ Feature Analysis & Selection
 
 How can ranging market conditions be statistically defined and quantified?
 
+### Research Progression
+
+**The project follows a structured quantitative research pipeline:**
+
+1. Feature Engineering
+2. Feature Validation
+3. Feature Correlation & Structural Analysis
+4. Feature Selection
+5. Regime Score Construction
+6. Market State Quantification
+This ensures that the final Range Score is built on statistically justified and non-redundant components.
