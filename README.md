@@ -158,8 +158,6 @@ Statistical Validation
 
 ## Visual Validation
 
-Two visual validation approaches were implemented:
-
 ### Price + Range Regime Overlay
 <p align="center">
   <img src="figures/PriceRangeDetection.png" width="800">
@@ -169,9 +167,6 @@ Two visual validation approaches were implemented:
 <p align="center">
   <img src="figures/RegimeDetection.png" width="800">
 </p>
-
-
-These plots allow qualitative inspection before statistical validation.
 
 ---
 
