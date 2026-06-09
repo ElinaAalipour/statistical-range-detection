@@ -3,7 +3,8 @@
 ## Objective
 This project aims to statistically define ranging market conditions using quantitative volatility-based features.
 
----
+## Project Goal
+Develop a statistically grounded indicator capable of identifying volatility compression regimes that are likely to produce ranging market behavior.
 
 ## Research Question
 How can ranging markets be statistically defined using measurable volatility compression signals?
@@ -17,14 +18,19 @@ EURUSD (H1 Timeframe)
 
 ## Methodology
 
-Define volatility-based hypotheses  
-Construct statistical features  
-Validate features visually and statistically  
-Perform correlation analysis and feature redundancy evaluation  
-Select representative features based on stability and diversity  
-Combine selected signals into a regime score
+The project follows a structured quantitative research pipeline:
+
+1. Volatility Hypothesis Definition
+2. Feature Engineering (Volatility Compression Signals)
+3. Feature Validation (Visual & Statistical)
+4. Correlation & Redundancy Analysis
+5. Representative Feature Selection
+6. Range Score Construction
+7. Market Regime Classification
+8. Statistical Validation
 
 ---
+
 ## Features
 
 ### ATR Compression ✅
@@ -38,8 +44,6 @@ Features:
 * atr_rel_16
 * atr_rel_48
 
----
-
 ### Standard Deviation Compression ✅
 
 Measures price dispersion relative to historical standard deviation baselines.
@@ -51,8 +55,6 @@ Features:
 * std_rel_16
 * std_rel_48
 
----
-
 ### Candle Range Compression ✅
 
 Measures individual candle-size contraction relative to historical candle ranges.
@@ -63,8 +65,6 @@ Features:
 
 * range_rel_16
 * range_rel_48
-
----
 
 ### Bollinger Band Width Compression ✅
 
@@ -87,6 +87,34 @@ After engineering 8 relative compression features, a full correlation and struct
 * Hierarchical feature clustering
 * Feature correlation network visualization
 
+---
+
+### Range Score Model (v1)
+
+Selected features are transformed using percentile rank normalization to ensure comparability across different volatility measures.
+
+Compression Score:
+
+s_i = 1 - rank_pct(x_i)
+
+Where higher values indicate stronger volatility compression.
+
+Range Score:
+
+RangeScore = mean([atr_rel_16_s, std_rel_48_s, range_rel_48_s]) * 100
+
+Score Interpretation:
+
+0–40 → Volatility Expansion (Trending Regime)
+
+40–60 → Neutral / Transitional Regime
+
+60–100 → Volatility Compression (Ranging Regime)
+
+This produces a continuous probabilistic score representing the likelihood of a ranging market state.
+
+---
+
 ### Key Findings:
 * Indicators derived from similar statistical foundations (e.g., STD and Bollinger Width) showed strong correlation.
 * Some short and mid-term horizons provided overlapping information.
@@ -106,36 +134,39 @@ After engineering 8 relative compression features, a full correlation and struct
 
 ## Feature Engineering Status
 
-Completed Features:
+Completed Components:
 
-* ATR Compression
-* Standard Deviation Compression
-* Candle Range Compression
-* Bollinger Band Width Compression
+ATR Compression
+Standard Deviation Compression
+Candle Range Compression
+Bollinger Band Width Compression
 
-Total Engineered Features:
+Feature Selection ✅
 
-* 8 Relative Compression Features
+Correlation Analysis ✅
+Redundancy Reduction ✅
+Representative Feature Set ✅
+
+Range Score Model ✅
+Regime Labeling ✅
 
 Current Stage:
 
-* Feature Validation ✅
-* Correlation & Redundancy Analysis ✅
-* Initial Feature Selection ✅
-* Range Score Design (In Progress)
-
+Statistical Validation
 
 ---
 
 ## Visual Validation
 
-### Price Behavior
+Two visual validation approaches were implemented:
 
-![Price Validation](figures/price_validation.png)
+Price + Range Regime Overlay
+Shows how detected regimes align with observable market structure.
 
-### ATR Compression Behavior
+Continuous Regime Shading
+Highlights prolonged compression and expansion periods.
 
-![ATR Validation](figures/atr_validation.png)
+These plots allow qualitative inspection before statistical validation.
 
 ---
 
@@ -155,30 +186,26 @@ ATR features show clear separation between:
 
 * Dataset acquisition and preprocessing
 * Exploratory data analysis
-* ATR Compression feature engineering
-* Standard Deviation Compression feature engineering
-* Candle Range Compression feature engineering
-* Bollinger Band Width feature engineering
-* Statistical validation
-* Visual validation
-* Full feature correlation analysis
-* Feature clustering & redundancy evaluation
-* Initial reduced feature set selection
+* Volatility compression feature engineering
+* Feature validation
+* Feature correlation analysis
+* Hierarchical feature clustering
+* Feature redundancy evaluation
+* Representative feature selection
+* Range Score v1 construction
+* Regime labeling
+* Visualization framework
 
 ### Current Phase
 
-Range Score Design & Regime Quantification
+Statistical Validation of Range Detection Engine
 
 ### Upcoming Work
 
-* Correlation analysis
-* Feature redundancy evaluation
-* Range Score design
-* Market regime classification
-
-### Research Question
-
-How can ranging market conditions be statistically defined and quantified?
+* Forward return analysis by regime
+* Directional efficiency evaluation
+* Price containment analysis
+* Mean reversion strength estimation
 
 ### Research Progression
 
