@@ -93,23 +93,23 @@ After engineering 8 relative compression features, a full correlation and struct
 
 Selected features are transformed using percentile rank normalization to ensure comparability across different volatility measures.
 
-Compression Score:
+**Compression Score:**
 
-s_i = 1 - rank_pct(x_i)
+* s_i = 1 - rank_pct(x_i)
 
 Where higher values indicate stronger volatility compression.
 
-Range Score:
+**Range Score:**
 
-RangeScore = mean([atr_rel_16_s, std_rel_48_s, range_rel_48_s]) * 100
+* RangeScore = mean([atr_rel_16_s, std_rel_48_s, range_rel_48_s]) * 100
 
-Score Interpretation:
+**Score Interpretation:**
 
-0–40 → Volatility Expansion (Trending Regime)
+* 0–40 → Volatility Expansion (Trending Regime)
 
-40–60 → Neutral / Transitional Regime
+* 40–60 → Neutral / Transitional Regime
 
-60–100 → Volatility Compression (Ranging Regime)
+* 60–100 → Volatility Compression (Ranging Regime)
 
 This produces a continuous probabilistic score representing the likelihood of a ranging market state.
 
@@ -134,12 +134,12 @@ This produces a continuous probabilistic score representing the likelihood of a 
 
 ## Feature Engineering Status
 
-Completed Components:
+**Completed Components:**
 
-ATR Compression
-Standard Deviation Compression
-Candle Range Compression
-Bollinger Band Width Compression
+* ATR Compression
+* Standard Deviation Compression
+* Candle Range Compression
+* Bollinger Band Width Compression
 
 Feature Selection ✅
 
@@ -150,7 +150,7 @@ Representative Feature Set ✅
 Range Score Model ✅
 Regime Labeling ✅
 
-Current Stage:
+**Current Stage:**
 
 Statistical Validation
 
@@ -160,11 +160,16 @@ Statistical Validation
 
 Two visual validation approaches were implemented:
 
-Price + Range Regime Overlay
-Shows how detected regimes align with observable market structure.
+### Price + Range Regime Overlay
+<p align="center">
+  <img src="figures/PriceRangeDetection.png" width="800">
+</p>
 
-Continuous Regime Shading
-Highlights prolonged compression and expansion periods.
+### Continuous Regime Mapping
+<p align="center">
+  <img src="figures/RegimeDetection.png" width="800">
+</p>
+
 
 These plots allow qualitative inspection before statistical validation.
 
@@ -198,7 +203,7 @@ ATR features show clear separation between:
 
 ### Current Phase
 
-Statistical Validation of Range Detection Engine
+**Statistical Validation of Range Detection Engine**
 
 ### Upcoming Work
 
